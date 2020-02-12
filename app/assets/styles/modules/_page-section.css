@@ -1,0 +1,35 @@
+.page-section {
+   padding: 1.2rem 0;
+
+   @mixin atMedium {
+      padding: 4.5rem 0;
+   }
+
+   &--green {
+      background-color: transparent;
+      
+      transition: background-color 1s linear; 
+      -moz-transition: background-color 1s linear;  
+      -webkit-transition: background-color 1s linear; 
+      -ms-transition: background-color 1s linear; 
+   }
+
+   &--green:hover {
+      background-color: #308204;
+     
+   }
+
+   &--gray {
+      background-color: transparent;
+      
+      transition: background-color 1s linear; 
+      -moz-transition: background-color 1s linear;  
+      -webkit-transition: background-color 1s linear; 
+      -ms-transition: background-color 1s linear; 
+   }
+
+   &--gray:hover {
+      background-color: #8d9196;
+     
+   }
+}
