@@ -1,116 +1,205 @@
 
- 
- @-webkit-keyframes bake-pie {
-   from {
-     -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
-             transform: rotate(0deg) translate3d(0, 0, 0);
-   }
- }
- 
- @keyframes bake-pie {
-   from {
-     -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
-             transform: rotate(0deg) translate3d(0, 0, 0);
-   }
- }
- .pie-chart {
-   font-family: "Open Sans", Arial;
- }
- .pie-chart--wrapper {
-   width: 400px;
-   margin: 30px auto;
-   text-align: center;
- }
- .pie-chart__pie, .pie-chart__legend {
-   display: inline-block;
-   vertical-align: top;
- }
- .pie-chart__pie {
-   position: relative;
-   height: 200px;
-   width: 200px;
-   margin: 10px auto 35px;
- }
- .pie-chart__pie::before {
-   content: "";
-   display: block;
-   position: absolute;
-   z-index: 1;
-   width: 100px;
-   height: 100px;
-   background: #EEE;
-   border-radius: 50%;
-   top: 50px;
-   left: 50px;
- }
- .pie-chart__pie::after {
-   content: "";
-   display: block;
-   width: 120px;
-   height: 2px;
-   background: rgba(0, 0, 0, 0.1);
-   border-radius: 50%;
-   box-shadow: 0 0 3px 4px rgba(0, 0, 0, 0.1);
-   margin: 220px auto;
- }
- 
- .slice {
-   position: absolute;
-   width: 200px;
-   height: 200px;
-   clip: rect(0px, 200px, 200px, 100px);
-   -webkit-animation: bake-pie 1s;
-           animation: bake-pie 1s;
- }
- .slice span {
-   display: block;
-   position: absolute;
-   top: 0;
-   left: 0;
-   background-color: black;
-   width: 200px;
-   height: 200px;
-   border-radius: 50%;
-   clip: rect(0px, 200px, 200px, 100px);
- }
- 
- .pie-chart__legend {
-   display: block;
-   list-style-type: none;
-   padding: 0;
-   margin: 0 auto;
-   background: #FFF;
-   padding: 0.75em 0.75em 0.05em;
-   font-size: 13px;
-   box-shadow: 1px 1px 0 #DDD, 2px 2px 0 #BBB;
-   text-align: left;
-   width: 65%;
- }
- .pie-chart__legend li {
-   height: 1.25em;
-   margin-bottom: 0.7em;
-   padding-left: 0.5em;
-   border-left: 1.25em solid black;
- }
- .pie-chart__legend em {
-   font-style: normal;
- }
- .pie-chart__legend span {
-   float: right;
- }
- 
- .pie-charts {
-   display: -webkit-box;
-   display: flex;
-   -webkit-box-orient: horizontal;
-   -webkit-box-direction: normal;
-           flex-direction: row;
- }
- @media (max-width: 500px) {
-   .pie-charts {
-     -webkit-box-orient: vertical;
-     -webkit-box-direction: normal;
-             flex-direction: column;
-   }
- }
- 
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 5px;
+  padding-bottom: 40px;
+}
+.item {
+  width: 19%;
+  background-color: $mainGreen;
+  border-radius: 10px;
+}
+.item:hover {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {  
+  0% {
+    box-shadow: 0 0;
+  }
+  70% {
+    box-shadow: 0 0 5px 10px rgba(255,255,255,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,255,255,0);
+  }  
+}
+.item h1 {
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 1px #000;
+}
+
+
+
+.item-1 {
+  height: 90%;
+  border: 5px solid $mainGreen;
+  border-bottom: none;
+  animation: riseUp1 1.5s ease;
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.item-1 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: text 1s ease;
+  animation-delay: 1.1s;
+  animation-fill-mode: backwards;
+}
+@keyframes riseUp1 {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 90%;
+  }
+}
+
+
+
+.item-2 {
+  height: 90%;
+  border: 5px solid $mainGreen;
+  border-bottom: none;
+  animation: riseUp2 1.5s ease;
+  animation-delay: 0.4s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.item-2 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: text 1s ease;
+  animation-delay: 1.2s;
+  animation-fill-mode: backwards;
+}
+@keyframes riseUp2 {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 90%;
+  }
+}
+
+
+
+.item-3 {
+  height: 75%;
+  border: 5px solid $mainGreen;
+  border-bottom: none;
+  animation: riseUp3 2.5s ease;
+  animation-delay: 0.6s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.item-3 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: text 1s ease;
+  animation-delay: 1.3s;
+  animation-fill-mode: backwards;
+}
+@keyframes riseUp3 {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 75%;
+  }
+}
+
+
+
+.item-4 {
+  height: 50%;
+  border: 5px solid $mainGreen;
+  border-bottom: none;
+  animation: riseUp4 2.5s ease;
+  animation-delay: 0.8s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.item-4 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: text 1s ease;
+  animation-delay: 1.4s;
+  animation-fill-mode: backwards;
+}
+@keyframes riseUp4 {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 50%;
+  }
+}
+
+
+
+.item-5 {
+  height: 40%;
+  border: 5px solid $mainGreen;
+  border-bottom: none;
+  animation: riseUp5 2.5s ease;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+  position: relative;
+}
+.item-5 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: text 1s ease;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+@keyframes riseUp5 {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 40%;
+  }
+}
+
+
+
+@keyframes text {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
