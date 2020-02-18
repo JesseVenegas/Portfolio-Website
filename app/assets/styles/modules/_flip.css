@@ -126,3 +126,11 @@
   padding: 15px 20px;
   text-transform: uppercase;
 }
+
+.video {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+  outline: 1px solid transparent;
+}
